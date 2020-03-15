@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Especificidade CSS</title>
+    <style>
+        /* https://developer.mozilla.org/pt-BR/docs/Web/CSS/Specificity */
+
+        /*Em linhas gerais, a prioridade dos estilos se dá:
+        1- Regra com !important
+        2- Seletores mais específicos
+        3- Ùltima regra processada (em caso de empate) */
+        
+        p {
+           background-color: #aaa;
+        }
+
+        /*Prevalece o estilo aplicado à classe, pq ela é um seletor mais específico que a tag*/
+         .observacao {
+           background-color: #5f5; 
+            border: dashed 5px;
+            padding: 200px;
+            font-size: 40px;
+        }
+
+        /*Elementos de classe "observação", dentro do parágrafp, é algo mais específico do que só a classe observação*/
+        p .observacao {
+            padding: 2px; 
+            background: linear-gradient(to right, red, yellow);
+        }
+    </style>
+</head>
+
+<body>
+    <p class='observacao'>Olha essa observação!!!!</p>
+</body>
+
+</html>
